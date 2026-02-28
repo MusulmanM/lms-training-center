@@ -129,6 +129,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media/'
+
 # This is a list of additional directories where Django will look for static files 
 # during development (and for collectstatic to copy from).
 if DEBUG:
