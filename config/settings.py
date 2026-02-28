@@ -22,7 +22,11 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = [h.strip() for h in env("ALLOWED_HOSTS").split(",") if h.strip()]
+
+# Ensure pythonanywhere host is allowed (useful when deploying there)
+if 'lmstrainingcenter.pythonanywhere.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('lmstrainingcenter.pythonanywhere.com')
 
 
 # Application definition
